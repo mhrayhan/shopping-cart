@@ -7,21 +7,29 @@ function productNumber(product, price, isIncrease){
         productNumber = productNumber - 1;
     }
    productNumberInput.value = productNumber;
-
+   
+    //Calculate Product Total
     const productTotal = document.getElementById(product + '-total');
-    console.log(productTotal);
-
     productTotal.innerText = productNumber * price;
 
+    //Calculate sub total
     const subTotal = document.getElementById('sub-total');
     const phoneTotal = document.getElementById('phone-number').value;
+    const phoneTotal2 = parseFloat(phoneTotal);
     const caseTotal = document.getElementById('case-number').value;
-    subTotal.value = phoneTotal + caseTotal;
+    const caseTotal2 = parseFloat(caseTotal);
+    subTotal.innerText = phoneTotal2 * phonePrice + caseTotal2 * casePrice;
 
 }
+    const phonePrice = 90000;
+    const casePrice = 2500;
 
-const phonePrice = 90000;
-const casePrice = 2500;
+
+
+
+
+
+
 //phone number increase
 document.getElementById('phone-plus').addEventListener('click', function(){
     productNumber('phone', phonePrice, true);
