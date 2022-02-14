@@ -31,12 +31,6 @@ function productNumber(product, price, isIncrease){
     const phonePrice = 1000;
     const casePrice = 250;
 
-
-
-
-
-
-
 //phone number increase
 document.getElementById('phone-plus').addEventListener('click', function(){
     productNumber('phone', phonePrice, true);
