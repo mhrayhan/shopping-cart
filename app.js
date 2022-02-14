@@ -13,16 +13,23 @@ function productNumber(product, price, isIncrease){
     productTotal.innerText = productNumber * price;
 
     //Calculate sub total
-    const subTotal = document.getElementById('sub-total');
+    const subTotalField = document.getElementById('sub-total');
     const phoneTotal = document.getElementById('phone-number').value;
     const phoneTotal2 = parseFloat(phoneTotal);
     const caseTotal = document.getElementById('case-number').value;
     const caseTotal2 = parseFloat(caseTotal);
-    subTotal.innerText = phoneTotal2 * phonePrice + caseTotal2 * casePrice;
+    const subTotal = phoneTotal2 * phonePrice + caseTotal2 * casePrice;
+    subTotalField.innerText = subTotal;
+
+    const tax = subTotal / 10;
+    const totalPrice = subTotal + tax;
+
+    document.getElementById('tax-amount').innerText = tax;
+    document.getElementById('total-price').innerText =totalPrice;
 
 }
-    const phonePrice = 90000;
-    const casePrice = 2500;
+    const phonePrice = 1000;
+    const casePrice = 250;
 
 
 
